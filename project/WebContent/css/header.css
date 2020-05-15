@@ -1,0 +1,152 @@
+/* 紐⑤컮�씪�슜 CSS */
+
+/* 湲곕낯 CSS */
+
+/* 紐⑤컮�씪�슜 CSS */
+
+/* 湲곕낯 CSS */
+
+.container {
+  width: 90%;
+  max-width: 1132px;
+  margin: 0 auto;
+}
+
+.cfixed:after, .container:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.blind {
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+.sec-tit {
+  font-size: 42px;
+  color: #A566FF;
+  font-weight: normal;
+}
+
+.divider {
+  width: 90%;
+  max-width: 1132px;
+  margin: 0 auto;
+  margin-top: 77px;
+  background: #eee;
+}
+
+.m-divider {
+  width: 20px;
+  margin: 0 auto;
+  margin-top: 77px;
+  background: #A566FF;
+}
+
+/* �뿤�뜑 �쁺�뿭 CSS */
+
+.header {
+  position: relative;
+  padding: 18px 5%;
+  background-color: #A566FF;
+}
+
+.header .logo {
+  float: left;
+}
+
+.header .logo a {
+  font-size: 26px;
+  color: #A566FF;
+  font-weight: bold;
+  color: white;
+}
+
+.header .gnb {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #A566FF;
+}
+
+
+
+.header .gnb li a:hover, li a:focus {
+  color: #FFD700;
+}
+
+.header .gnb li {
+  border-bottom: 1px solid #303f9f;
+}
+
+.header .gnb li a {
+  display: block;
+  padding: 14px 0 14px 5%;
+  font-size: 15px;
+  color: #fff;
+  color: white;
+}
+
+.header .menu-toggle-btn {
+  float: right;
+  width: 20px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.header .menu-toggle-btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #FFFFFF;
+}
+
+.header .menu-toggle-btn span:nth-child(2) {
+  margin: 5px 0;
+}
+
+#homee {
+  color: #FFD700;
+}
+
+/* �깭釉붾┸�슜 */
+
+@media all and (min-width:768px) {
+  /* �뿤�뜑 �쁺�뿭 CSS */
+  .header {
+    position: static;
+    padding: 28px 52px;
+  }
+  .header .gnb {
+    display: block !important;
+    position: static;
+    float: right;
+    width: auto;
+    margin-top: 6px;
+    background: none;
+
+  }
+  .header .gnb li {
+    float: left;
+    margin-left: 21px;
+    font-size: 122px;
+    border-bottom: 0;
+  }
+  .header .gnb li a {
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+  color: white;
+  }
+  .header .menu-toggle-btn {
+    display: none !important;
+  }
+
+}
