@@ -7,7 +7,7 @@
 /* 湲곕낯 CSS */
 
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 1132px;
   margin: 0 auto;
 }
@@ -18,35 +18,7 @@
   clear: both;
 }
 
-.blind {
-  position: absolute;
-  width: 0;
-  height: 0;
-  line-height: 0;
-  text-indent: -9999px;
-  overflow: hidden;
-}
 
-.sec-tit {
-  font-size: 42px;
-  color: #A566FF;
-  font-weight: normal;
-}
-
-.divider {
-  width: 90%;
-  max-width: 1132px;
-  margin: 0 auto;
-  margin-top: 77px;
-  background: #eee;
-}
-
-.m-divider {
-  width: 20px;
-  margin: 0 auto;
-  margin-top: 77px;
-  background: #A566FF;
-}
 
 #wrap {
   background-color: black;
@@ -66,7 +38,7 @@
 }
 
 .header .logo a {
-  font-size: 26px;
+  font-size: 38px;
   color: #A566FF;
   font-weight: bold;
 }
@@ -125,98 +97,29 @@
 /* �냼媛쒖슜 */
 
 .introduce-section {
-  margin-top: 130px;
-  margin-bottom: 70px;
+  margin-top: 0px;
+  margin-bottom: 0px;
   text-align: center;
 }
 
 .introduce-section .iimg{
-  width:  300px;
-  margin-bottom: 100px;
-  text-align: center;
-}
-
-.introduce-section h2 {
-  color: #A566FF;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  font-size: 36px;
-}
-
-.introduce-section p {
-  margin-top: 60px;
-  line-height: 35px;
-  font-size: 16px;
-}
-
-}
-
-.blog-section {
-  margin-top: 77px;
-    margin-bottom: 77px;
-  text-align: center;
-}
-
-.blog-section .sec-tit {
-  margin-bottom: 47px;
-  text-align: center;
-}
-
-.blog-section h2 {
-    margin-top: 40px;
-  margin-bottom: 70px;
-  color: #A566FF;
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  font-size: 43px;
-}
-.blog-section p {
-  margin-top: 60px;
-  line-height: 40px;
-}
-.blog-section .container {
-  text-align: center;
-}
-
-.blog-section .blog-list li {
   width: 100%;
-  margin-top: 45px;
-  margin-bottom: 100px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  text-align: center;
+  float: center;
 }
 
-.blog-section .blog-list li:first-child {
-  margin-top: 0;
-}
-
-.blog-section .blog-list li img {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-}
-
-.blog-section .blog-list li time {
-  display: block;
-  margin: 11px 0 10px 0;
-  font-size: 11px;
-  color: #9e9e9e;
-}
-
-.blog-section .blog-list li h3 {
-  color: #424242;
-  font-weight: normal;
-  line-height: 1.9;
-}
 
 /* footer CSS */
 .footer-section{
-  margin-top: 90px;
+  margin-top: 50px;
 }
 
 
 .footer-section .footer-list li {
-  margin-top: 52px;
-  text-align: center;
+  margin-top: 50px;
+  text-align: left;
   margin-bottom: 50px;
 }
 
@@ -272,36 +175,15 @@
   .header .menu-toggle-btn {
     display: none !important;
   }
-  .blog-section {
-    margin-top: 124px;
-  }
-  .blog-section .sec-tit {
-    margin-bottom: 76px;
-  }
-  .blog-section .blog-list li {
-    float: left;
-    width: 31.59722222222222%;
-    /* 242.6666666666667px 첨 768px*/
-    margin-left: 2.604166666666667%;
-    /* 20px 첨 768px*/
-    margin-top: 0;
-  }
-  .blog-section .blog-list li:first-child {
-    margin-left: 0;
-  }
-
-  .blog-section p {
-    margin-top: 462px;
-    font-size: 22px;
-  }
+  
 
   .footer-section .footer-list li {
-    float: left;
-    width: 31.59722222222222%;
+    float: center;
+    width: 60.59722222222222%;
     /* 242.6666666666667px 첨 768px*/
     margin-left: 2.604166666666667%;
     /* 20px 첨 768px*/
-    margin-top: 50px;;
+    margin-top: 0px;;
   }
 
   .footer-section .footer-list .address {
@@ -323,20 +205,12 @@
 /* pc�슜 */
 
 @media all and (min-width:1132px) {
-  .blog-section .sec-tit {
-    float: left;
-    margin-bottom: 0;
-  }
-  .blog-section .blog-list li {
-    width: 31.75355450236967%;
-    /* 268px 첨 844px*/
-    margin-left: 2.369668246445498%;
-    /* 20px 첨 844px*/
-  }
 
   .introduce-section .iimg{
-    width:  600px;
-    margin-bottom: 100px;
+    width:  100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
     text-align: center;
+    float: center;
   }
 }

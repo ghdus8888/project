@@ -12,7 +12,7 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/default.css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
-
+<link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="apple-touch-icon-precomposed"
 	href="images/favicon/indigo-touch-icon.png">
 <script src="js/jquery.min.js"></script>
@@ -21,10 +21,6 @@
 
 
 <style>
-img { display: block; 
-margin: 0px auto;
-
-}
 </style>
 <%
 	String checkId = "";
@@ -75,10 +71,24 @@ margin: 0px auto;
 			</nav>
 			
 		</header>
-					
-					
-					<img src="images/ground1.png" alt="">
-			
+					<h1>대여하기</h1>
+					<form method="get" action="P120">
+ 
+
+    <span style="float: left; margin-right:20px;">
+        <label for ="foot1">풋살장</label>
+        <select id="foot1" name="foot1" size="1">
+            <option value="">선택하세요</option>
+            <option value="풋살장1">풋살장1</option>
+            <option value="풋살장2">풋살장2</option>
+            <option value="풋살장3">풋살장3</option>
+            <option value="풋살장4">풋살장4</option>
+        </select>
+    </span>
+ <br /> <br />
+    <button type="submit">확인</button>
+   
+</form>
 					
 					
 					
