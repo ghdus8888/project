@@ -12,7 +12,6 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/default.css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
-<link rel="stylesheet" type="text/css" href="css/header.css">
 <link rel="apple-touch-icon-precomposed"
 	href="images/favicon/indigo-touch-icon.png">
 <script src="js/jquery.min.js"></script>
@@ -72,28 +71,24 @@
 			
 		</header>
 					<h1>대여하기</h1>
-					<form method="get" action="P120">
- 
-
-    <span style="float: left; margin-right:20px;">
-        <label for ="foot1">풋살장</label>
-        <select id="foot1" name="foot1" size="1">
-            <option value="">선택하세요</option>
-            <option value="풋살장1">풋살장1</option>
-            <option value="풋살장2">풋살장2</option>
-            <option value="풋살장3">풋살장3</option>
-            <option value="풋살장4">풋살장4</option>
-        </select>
-    </span>
- <br /> <br />
-    <button type="submit">확인</button>
-   
-</form>
 					
-					
-					
-		
-
+<div align="center"></div>
+<table border="1" width="1850" height="1000">
+<tr height="10%">
+<th width="20%" style="font-size: 30px">풋살장</th>
+<th width="60%" style="font-size: 30px">예약시간</th>
+</tr>
+<tr align = "center" height = "30%">
+<td><button type="button"><img src="images/foot1.png" alt=""></button></td>
+<td rowspan="3"></td>
+</tr>
+<tr align = "center" height = "30%">
+<td><button type="button"><img src="images/foot2.png" alt=""></button></td>
+</tr>
+<tr align = "center" height = "30%">
+<td><button type="button"><img src="images/foot3.png" alt=""></button></td>
+</tr>
+</table>
 		<footer class="footer-section">
 			<div class="container">
 				<ul class="footer-list">
