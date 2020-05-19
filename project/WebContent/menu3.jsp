@@ -12,7 +12,6 @@
 <link rel="stylesheet" type="text/css" href="css/reset.css">
 <link rel="stylesheet" type="text/css" href="css/default.css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
-
 <link rel="apple-touch-icon-precomposed"
 	href="images/favicon/indigo-touch-icon.png">
 <script src="js/jquery.min.js"></script>
@@ -21,10 +20,6 @@
 
 
 <style>
-img { display: block; 
-margin: 0px auto;
-
-}
 </style>
 <%
 	String checkId = "";
@@ -33,7 +28,6 @@ margin: 0px auto;
 
 	while (se.hasMoreElements()) {
 		String getse = se.nextElement() + "";
-		
 	}
 %>
 </head>
@@ -74,10 +68,16 @@ margin: 0px auto;
 			</nav>
 			
 		</header>
+		<bodyer class="bodyer-section">
+			<div class="container">
+					<h1>상대방 찾기</h1>
+					<div class="container">
+
+
+					</div>
+					</bodyer>
 					
-					
-					<img src="images/ground1.png" alt="">
-			
+<div align="center"></div>
 
 		<footer class="footer-section">
 			<div class="container">

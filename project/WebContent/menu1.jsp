@@ -24,12 +24,10 @@
 <%
 	String checkId = "";
 	checkId = (String) session.getAttribute("b_id");
-	System.out.println(checkId + " : 세션아이디 ");
 	Enumeration se = session.getAttributeNames();
 
 	while (se.hasMoreElements()) {
 		String getse = se.nextElement() + "";
-		System.out.println("@@@@@@@ session : " + getse + " : " + session.getAttribute(getse));
 	}
 %>
 </head>
@@ -41,7 +39,7 @@
 			<%
 				if (checkId == null) {
 			%>
-			<a href="login2.jsp"><button id="login_check">로그인</button></a>
+			<a href="login.jsp"><button id="login_check">로그인</button></a>
 			<%
 				} else {
 			%>
@@ -51,7 +49,7 @@
 			%>
 
 			<button>|</button>
-			<button id="myBtn">MY PAGE</button>
+			<button id="myBtn">내 정보</button>
 
 
 		</div>
@@ -70,10 +68,11 @@
 			</nav>
 			
 		</header>
-					<h1>대여하기</h1>
 					
+					<div class="container">
+					<h1>대여하기</h1>
 <div align="center"></div>
-<table border="1" width="1850" height="1000">
+<table border="1" width=auto height=auto>
 <tr height="10%">
 <th width="20%" style="font-size: 30px">풋살장</th>
 <th width="60%" style="font-size: 30px">예약시간</th>
@@ -89,6 +88,7 @@
 <td><button type="button"><img src="images/foot3.png" alt=""></button></td>
 </tr>
 </table>
+</div>
 		<footer class="footer-section">
 			<div class="container">
 				<ul class="footer-list">
