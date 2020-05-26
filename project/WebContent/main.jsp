@@ -61,7 +61,7 @@ margin: 0px auto;
 		</div>
 		<header class="header cfixed">
 			<h1 class="logo">
-				<a href="">풋살장 예약 시스템</a>
+				<a href="main.jsp">풋살장 예약 시스템</a>
 			</h1>
 			<nav>
 				<ul class="gnb">
