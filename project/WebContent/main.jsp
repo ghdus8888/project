@@ -28,7 +28,8 @@ margin: 0px auto;
 </style>
 <%
 	String checkId = "";
-	checkId = (String) session.getAttribute("b_id");
+	
+	checkId = (String) session.getAttribute("id");
 	Enumeration se = session.getAttributeNames();
 
 	while (se.hasMoreElements()) {

@@ -6,6 +6,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="js/jquery.min.js"></script>
+<script src="register.js"></script>
 <title>회원가입</title>
 
 
@@ -176,80 +178,6 @@ button:active {
 	transform: translateY(5px)
 }
 </style>
-<script type="text/javascript">
-	window.onload = function() {
-		// document.getElementById("btnSend").onclick = ?;
-		document.getElementById('mumu').onsubmit = function() {
-			// alert('비밀번호가 서로 다르게 입력되었습니다');
-			var pass = document.getElementById('ch1').value;
-			var passCheck = document.getElementById('ch2').value;
-			var id = document.getElementById('aaa').value;
-			var name = document.getElementById('name').value;
-			var ph1 = document.getElementById('ph1').value;
-
-
-			if (id != "") {
-
-			} else {
-				alert('아이디를 입력하여 주십시오');
-				return false;
-			}
-
-			if (pass != "") {
-
-			} else {
-				alert('비밀번호를 입력하여 주십시오');
-				return false;
-			}
-			if (name != "") {
-
-			} else {
-				alert('이름을 입력하여 주십시오');
-				return false;
-			}
-			if (ph1 != "") {
-
-			} else {
-				alert('핸드폰번호를 입력하여 주십시오');
-				return false;
-			}
-			if (ph2 != "") {
-
-			} else {
-				alert('핸드폰번호를 입력하여 주십시오');
-				return false;
-			}
-			if (pass == passCheck) {
-
-			} else {
-				alert('비밀번호가 서로 다르게 입력되었습니다');
-				return false;
-			}
-
-		}
-	}
-	function test() {
-
-		var a = document.getElementById("aaa").value;
-		window.location.href = "check.jsp?idd=" + a;
-
-	}
-	function joinCheck() {
-
-		alert("비밀번호를 입력해주세요.");
-		if (!mumu.password.value == "" || mumu.password.trim().length == 0) {
-
-			alert("비밀번호를 입력해주세요.");
-			mumu.password.value = "";
-			mumu.password.focus();
-			return false;
-
-		}
-
-		else
-			true;
-	}
-</script>
 
 
 </head>
@@ -258,9 +186,9 @@ button:active {
 
 	<br>
 	</br>
-	<form id="mumu" name="mumu" action="joinsuccess.jsp" method="post"">
+	<form>
 		<div id="box">
->
+
 			<h2>풋살장 예약 시스템</h2>
 
 
@@ -270,15 +198,15 @@ button:active {
 				<input type="text" id="aaa" name="id">
 			</div>
 			<div class="aid3" style="width: 80px">
-				<button type="button" class="btn1" onclick="test()">중복확인</button>
+				<button id="btn1" name="btn1" type="button" class="btn1" onclick="test()">중복확인</button>
 			</div>
 			<div class="pw">비밀번호</div>
 			<div class="pw2">
-				<input type="password" id='ch1' name="password" size="22" />
+				<input type="password" id='ch1' name="passwd" size="22" />
 			</div>
 			<div class="pw_1">비밀번호 확인</div>
 			<div class="pw_2">
-				<input type="password" id='ch2' name="PWC" size="22" />
+				<input type="password" id='ch2' name="repass" size="22" />
 			</div>
 			<div class="nm">이름</div>
 			<div class="nm2">
@@ -286,11 +214,11 @@ button:active {
 			</div>
 			<div class="pn">연락처</div>
 			<div class="pn2">
-				<input type="text" id='ph2' name="phone" size="22" />
+				<input type="text" id='ph2' name="tel" size="22" />
 			</div>
 
 			<div class="bt_1">
-				<button type="submit" id="btnsend" class="bt_2">회원가입</button>
+				<button name="btn2" type="submit" id="btnsend" class="bt_2">회원가입</button>
 				<!--    <input type="submit" class="bt_2">회원가입/> -->
 			</div>
 	</form>

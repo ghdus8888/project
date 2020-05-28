@@ -1,33 +1,37 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@page import="java.sql.*"%> <%-- JDBC API 임포트 작업 --%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<form action="test.jsp" method="post">
-select <select name="select" >
-         <option value="1" selected="selected">1</option>
-         <option value="2" >2</option>
-         <option value="3">3</option>
-         <option value="4">4</option>
-         </select>
-         <p>
-         <hr>
-         <p>
-
-         <input type="submit" value="������">
-</form>
 <%
-request.setCharacterEncoding("utf-8");
-
-String select1="select1 : "+request.getParameter("select")+"��";
- 
-out.println(select1+"<p>");
-
- 
+    String driverName="com.mysql.jdbc.Driver";
+    String url = "jdbc:mysql://localhost:3306/project?serverTimezone=UTC";
+    String id = "root";
+    String pwd ="q1w2e3r4A";
+   Connection conn=null;
+    try{
+        //[1] JDBC 드라이버 로드
+        Class.forName(driverName);     
+        conn = DriverManager.getConnection(url,id,pwd);
+        out.println("good sucess!!");
+        conn.close();
+    }catch(ClassNotFoundException e){
+        out.println("Where is your mysql jdbc driver?");
+        e.printStackTrace();
+        return;
+    }
+    out.println("mysql jdbc Driver registered!!");
+   
+    //[2]데이타베이스 연결 
+    
+     
+    //[3]데이타베이스 연결 해제
+    
 %>
 </body>
 </html>
