@@ -72,15 +72,16 @@ s
 
 	<div id="login_box">
 		<h2 style="margin-top: 50px;"><a href="http://203.234.62.85:8080/project/main.jsp" >풋살장 예약 시스템</a></h2>
-		<form action="main.jsp" method="post">
+		<form action="userCheck.jsp" method="post">
 			<p>
-				<input type="text" name="id" placeholder="아이디"> 
-				<input type="password" name="passwd" placeholder="비밀번호"
-					style="margin-top: 10px;">
+				<!-- value 하드코딩함 -->
+				<input type="text" name="id" value="test1" placeholder="아이디">
+				<input type="password" name="passwd" value="123" placeholder="비밀번호" style="margin-top: 10px;">
 			</p>
 
 			<div id="login_button">
-				<button style="background: #A566FF;">로그인</button>
+				<button type="submit" style="background: #A566FF;">로그인</button>
+			</div>
 		</form>
 	</div>
 
@@ -88,8 +89,7 @@ s
 	<div id="ps_button">
 	<a href="join.jsp" target="_blank" style="color: #A566FF; font-size: 20px;"><b>회원가입</b></a><br />
 	</div>
-	<a href="findid.jsp" target="_blank" style="color: #A566FF; font-size: 20px;"><b>아이디 / 비밀번호
-			찾기</b></a>
+	<a href="findid.jsp" target="_blank" style="color: #A566FF; font-size: 20px;"><b>아이디 / 비밀번호 찾기</b></a>
 	</div>
 </body>
 </html>

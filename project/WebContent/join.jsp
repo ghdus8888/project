@@ -186,7 +186,7 @@ button:active {
 
 	<br>
 	</br>
-	<form>
+	<form action="insertMember.jsp" method="post">
 		<div id="box">
 
 			<h2>풋살장 예약 시스템</h2>
