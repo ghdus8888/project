@@ -22,14 +22,14 @@ public class LogonDBBean {
         try {
 
             // 1. 드라이버 로딩
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("com.mysql.jdbc.Driver");
 
             // 2. 연결하기 ("jdbc:mysql://localhost/사용할db이름")
-            String url = "jdbc:mysql://project.cwz3fnxw5t4g.ap-northeast-2.rds.amazonaws.com/project";
+            String url = "jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=UTC";
 
             // 3. 연결 정보 url, id, pw
-            conn = DriverManager.getConnection(url, "admin", "!test123");
-
+            conn = DriverManager.getConnection(url, "root", "q1w2e3r4A");
+            System.out.println("db성공1");
         } catch(ClassNotFoundException e) {
             System.out.println("드라이버 로딩 실패");
         } catch(SQLException e) {
@@ -41,10 +41,7 @@ public class LogonDBBean {
         return conn;
     }
 
-    /**
-     * 회원 가입 처리 insertMember.jsp (심프로 수정)
-     * @param member
-     */
+
     public int insertMember(LogonDataBean member) {
         Connection conn = null;
         PreparedStatement pstmt = null;
@@ -96,12 +93,6 @@ public class LogonDBBean {
 
     //
 
-    /**
-     * 로그인 처리 userCheck.jsp (심프로 수정)
-     * @param id
-     * @param passwd
-     * @return
-     */
     public int userCheck(String id, String passwd) {
         Connection conn = null;
         PreparedStatement pstmt = null;

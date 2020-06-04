@@ -3,7 +3,7 @@
 <script src="js/jquery.min.js"></script>
 
 <%
-  // 로그인 (심프로 파일 추가)
+
   request.setCharacterEncoding("utf-8");
   String id = request.getParameter("id");
   String passwd = request.getParameter("passwd");

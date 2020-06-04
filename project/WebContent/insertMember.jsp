@@ -4,7 +4,7 @@
 <script src="js/jquery.min.js"></script>
 
 <%
-  // 로그인 (심프로 파일 추가)
+
   request.setCharacterEncoding("utf-8");
   LogonDataBean vo = new LogonDataBean();
   vo.setId(request.getParameter("id"));
