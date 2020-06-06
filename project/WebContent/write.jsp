@@ -33,6 +33,43 @@
 	}
 %>
 </head>
+<script language = "javascript"> // 자바 스크립트 시작
+
+function writeCheck()
+  {
+   var form = document.writeform;
+   
+   if( !form.name.value )   // form 에 있는 name 값이 없을 때
+   {
+    alert( "이름을 적어주세요" ); // 경고창 띄움
+    form.name.focus();   // form 에 있는 name 위치로 이동
+    return;
+   }
+   
+   if( !form.password.value )
+   {
+    alert( "비밀번호를 적어주세요" );
+    form.password.focus();
+    return;
+   }
+   
+  if( !form.title.value )
+   {
+    alert( "제목을 적어주세요" );
+    form.title.focus();
+    return;
+   }
+ 
+  if( !form.memo.value )
+   {
+    alert( "내용을 적어주세요" );
+    form.memo.focus();
+    return;
+   }
+ 
+  form.submit();
+  }
+ </script>
 
 <body>
 	<div id="wrap">
@@ -72,90 +109,67 @@
 		</header>
 		<bodyer class="bodyer-section">
 			<div class="container">
-					<h1>게시판</h1>
+					<h1>글쓰기</h1>
 					<div class="container">
-					 <%
-	Class.forName("com.mysql.jdbc.Driver");
-	String url = "jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=UTC";
-	String id = "root";
-	String pass = "q1w2e3r4A";
-	int total = 0;
-	
-	try {
-		Connection conn = DriverManager.getConnection(url,id,pass);
-		Statement stmt = conn.createStatement();
+					 <table>
+					 <form name=writeform method=post action="write_ok.jsp">
 
-		String sqlCount = "SELECT COUNT(*) FROM board";
-		ResultSet rs = stmt.executeQuery(sqlCount);
-		
-		if(rs.next()){
-			total = rs.getInt(1);
-		}
-		rs.close();
-		out.print("총 게시물 : " + total + "개");
-		
-		String sqlList = "SELECT NUM, USERNAME, TITLE, TIME, HIT from board order by NUM DESC";
-		rs = stmt.executeQuery(sqlList);
-		
-%>
-<table width="100%" height="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr height="5"><td width="5"></td></tr>
- <tr style="background:url('img/table_mid.gif') repeat-x; text-align:center;">
-   <td width="5"><img src="img/table_left.gif" width="5" height="30" /></td>
-   <td width="73">번호</td>
-   <td width="379">제목</td>
-   <td width="73">작성자</td>
-   <td width="164">작성일</td>
-   <td width="58">조회수</td>
-   <td width="7"><img src="img/table_right.gif" width="5" height="30" /></td>
+  <tr>
+   <td>
+    <table width="100%" cellpadding="0" cellspacing="0" border="1">
+    
+     <tr style="text-align:center;">
+
+      <td>글쓰기</td>
+
+     </tr>
+    </table>
+   <table border="1">
+     <tr>
+      <td>&nbsp;</td>
+      <td align="center">제목</td>
+      <td><input name="title" size="50" maxlength="100"></td>
+      <td>&nbsp;</td>
+     </tr>
+     <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td align="center">이름</td>
+      <td><input name="name" size="50" maxlength="50"></td>
+      <td>&nbsp;</td>
+     </tr>
+      <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td align="center">비밀번호</td>
+      <td><input name="password" size="50" maxlength="50"></td>
+      <td>&nbsp;</td>
+     </tr>
+     <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
+     <tr>
+      <td>&nbsp;</td>
+      <td align="center">내용</td>
+      <td><textarea name="memo" cols="50" rows="13"></textarea></td>
+      <td>&nbsp;</td>
+     </tr>
+     <tr height="1" bgcolor="#dddddd"><td colspan="4"></td></tr>
+     <tr height="1" bgcolor="#82B5DF"><td colspan="4"></td></tr>
+     <tr align="center">
+      <td>&nbsp;</td>
+      <td colspan="2">
+      <input type=button value="등록" OnClick="javascript:writeCheck();"> 
+<input type=button value="취소" OnClick="javascript:history.back(-1)">
+
+
+      <td>&nbsp;</td>
+     </tr>
+    </table>
+   </td>
   </tr>
-<%
-	if(total==0) {
-%>
-	 		<tr align="center" bgcolor="#FFFFFF" height="30">
-	 	   <td colspan="6">등록된 글이 없습니다.</td>
-	 	  </tr>
-<%
-	 	} else {
-	 		
-		while(rs.next()) {
-			int idx = rs.getInt(1);
-			String name = rs.getString(2);
-			String title = rs.getString(3);
-			String time = rs.getString(4);
-			int hit = rs.getInt(5);
-		
-%>
-<tr height="25" align="center">
-	<td>&nbsp;</td>
-	<td><%=idx %></td>
-	<td align="left"><%=title %></td>
-	<td align="center"><%=name %></td>
-	<td align="center"><%=time %></td>
-	<td align="center"><%=hit %></td>
-	<td>&nbsp;</td>
-</tr>
-  <tr height="1" bgcolor="#D2D2D2"><td colspan="6"></td></tr>
-<% 
-		}
-	} 
-	rs.close();
-	stmt.close();
-	conn.close();
-} catch(SQLException e) {
-	out.println( e.toString() );
-}
-%>
- <tr height="1" bgcolor="#82B5DF"><td colspan="6" width="752"></td></tr>
+  </form>
  </table>
- 
-<table width="100%" cellpadding="0" cellspacing="0" border="0">
-  <tr><td colspan="4" height="5"></td></tr>
-  <tr align="center">
-   <td><input type=button value="글쓰기" OnClick="window.location='write.jsp'"></td>
 
-  </tr>
-</table>
+
 
 					</div>
 					</bodyer>
