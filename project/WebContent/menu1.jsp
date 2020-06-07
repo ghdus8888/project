@@ -1,5 +1,7 @@
 <%@page import="java.util.Enumeration"%>
 <%@ page contentType="text/html; charset=utf-8"%>
+<%@ page import="java.sql.*"%>
+
 
 <!DOCTYPE HTML>
 <html lang="ko">
@@ -70,23 +72,64 @@
 		</header>
 					
 					<div class="container">
-					<h1>대여하기</h1>
+					<h1>예약하기</h1>
 <div align="center"></div>
 <table border="1" width=auto height=auto>
 <tr height="10%">
 <th width="20%" style="font-size: 30px">풋살장</th>
-<th width="60%" style="font-size: 30px">예약시간</th>
+<th width="40%" style="font-size: 30px">예약시간</th>
+<th width="20%" style="font-size: 30px">예약가능여부</th>
 </tr>
-<tr align = "center" height = "30%">
-<td><button type="button"><img src="images/foot1.png" alt=""></button></td>
-<td rowspan="3"></td>
-</tr>
-<tr align = "center" height = "30%">
-<td><button type="button"><img src="images/foot2.png" alt=""></button></td>
-</tr>
-<tr align = "center" height = "30%">
-<td><button type="button"><img src="images/foot3.png" alt=""></button></td>
-</tr>
+<%
+      // 1. JDBC 드라이버 로딩
+      Class.forName("com.mysql.jdbc.Driver");
+  
+      Connection conn = null; // DBMS와 Java연결객체
+      Statement stmt = null; // SQL구문을 실행
+      ResultSet rs = null; // SQL구문의 실행결과를 저장
+  
+      try
+      {
+            String jdbcDriver = "jdbc:mysql://localhost:3306/project?characterEncoding=UTF-8&serverTimezone=UTC";
+            String dbUser = "root";
+            String dbPass = "q1w2e3r4A";
+   
+            String query = "select * from ground_1";
+   
+            // 2. 데이터베이스 커넥션 생성
+            conn = DriverManager.getConnection(jdbcDriver, dbUser, dbPass);
+   
+            // 3. Statement 생성
+            stmt = conn.createStatement();
+   
+            // 4. 쿼리 실행
+            rs = stmt.executeQuery(query);
+   
+            // 5. 쿼리 실행 결과 출력
+            while(rs.next())
+            {
+%>
+
+      <tr>
+            <td><center><button type="button">풋살장 1</button></center></td>
+            <td><center><button type="button"><%= rs.getString("time") %></button></center></td>
+            <td><%= rs.getString("yn") %></td>
+      </tr>
+<%
+            }
+      }catch(SQLException ex){
+            out.println(ex.getMessage());
+            ex.printStackTrace();
+      }finally{
+            // 6. 사용한 Statement 종료
+            if(rs != null) try { rs.close(); } catch(SQLException ex) {}
+            if(stmt != null) try { stmt.close(); } catch(SQLException ex) {}
+   
+            // 7. 커넥션 종료
+            if(conn != null) try { conn.close(); } catch(SQLException ex) {}
+      }
+%>
+
 </table>
 </div>
 		<footer class="footer-section">

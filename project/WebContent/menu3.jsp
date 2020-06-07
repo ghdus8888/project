@@ -94,7 +94,7 @@
 		rs.close();
 		out.print("총 게시물 : " + total + "개");
 		
-		String sqlList = "SELECT NUM, USERNAME, TITLE, TIME, HIT from board order by NUM DESC";
+		String sqlList = "SELECT NUM, USERNAME, TITLE, TIME, HIT, INDENT from board order by REF DESC, STEP ASC";
 		rs = stmt.executeQuery(sqlList);
 		
 %>
@@ -129,7 +129,7 @@
 <tr height="25" align="center">
 	<td>&nbsp;</td>
 	<td><%=idx %></td>
-	<td align="left"><%=title %></td>
+	<td align="left"><a href="view.jsp?idx=<%=idx%>"><%=title %></td>
 	<td align="center"><%=name %></td>
 	<td align="center"><%=time %></td>
 	<td align="center"><%=hit %></td>

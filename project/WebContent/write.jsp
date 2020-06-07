@@ -124,7 +124,7 @@ function writeCheck()
 
      </tr>
     </table>
-   <table border="1">
+   <table border="0">
      <tr>
       <td>&nbsp;</td>
       <td align="center">제목</td>
